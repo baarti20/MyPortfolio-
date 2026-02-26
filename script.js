@@ -1,5 +1,7 @@
 const cursor = document.querySelector('.cursor');
 const themeToggle = document.getElementById('theme-toggle');
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('header nav');
 
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
@@ -21,6 +23,20 @@ themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
     themeToggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
 });
+
+if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        navToggle.classList.toggle('active');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            navToggle.classList.remove('active');
+        });
+    });
+}
 
 document.querySelectorAll('.card, .skill-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
