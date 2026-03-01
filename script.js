@@ -61,4 +61,8 @@ profilePhoto.addEventListener('click', () => {
 
 modal.addEventListener('click', () => {
     modal.classList.remove('active');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> d978fb7fbe4a0c6e074f33a3dde2c41eed3117fc
